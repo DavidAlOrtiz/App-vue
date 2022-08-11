@@ -44,6 +44,22 @@ const store = createStore({
                 return stage.memories.find(memory => memory.id === memoriId)
             }
         }
+    },
+    mutations:{
+      addMemory(stage, memoryData){
+        const newMemory = {
+          id: new Date().toISOString(),
+          title: memoryData.title,
+          image: memoryData.image,
+          description : memoryData.description
+        }
+        stage.memories.unshift(newMemory);
+      }
+    },
+    actions:{
+      addMemory(context, memoryData){
+        context.commit('addMemory', memoryData)
+      }
     }
 });
 

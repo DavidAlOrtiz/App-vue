@@ -1,7 +1,6 @@
 <template>
   <ion-list>
-   <MemoriesListItem />
-   <h1>Memories</h1>
+   <memories-list-item v-for="m in memories" :key="m.id" :m="m"  ></memories-list-item>
   </ion-list>
 </template>
 
@@ -18,4 +17,4 @@ export default {
 </script>
 
 <style>
-</style>
+</style> 
